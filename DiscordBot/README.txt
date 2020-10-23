@@ -1,0 +1,1 @@
+A Discord Bot that allows users to roll various-sided dice(d6,d10,d20,etc) or random numbers in a range, and also allows users to play a very simple card game(assigns card to each user in the calling channel, highest cards win).

@@ -7,7 +7,7 @@ Commands
 		!roll 1-100
 		!roll 3d6
 		!roll 1d20
-!card
+-!card
 	-draws a card for each user currently in the same voice channel as the sending user. The highest value is the winner.(Very Exciting, I know)
 
 

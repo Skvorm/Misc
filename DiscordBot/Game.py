@@ -6,16 +6,17 @@ class Game:
 
     d = Deck()
     shuffle(d.currentDeck)
-    save_file=""
     winner=""
     def get_winner(self):
         return self.winner
+
     def set_winner(self,player):
         self.winner=player
+
     #returns formatted message:
-    def save_file_set(self,file):
-        self.save_file=file
-    def play(self,player_list,end,round_num):
+    def play(self,player_list,round_num):
+        if len(player_list)==0:
+            return "No Cards Drawn"
         highest=[]
         card_list=[]
         winners=[]
@@ -23,12 +24,7 @@ class Game:
         highest_card=''
         msg=''
         print(player_list)
-        # true for testing-false to use actual input
-        if end == False:
-            name_list=self.d.get_cards_names(player_list)
-        else:
-            name_list={'Five of Spades':'Player1','Five of Aces': 'Player2'}
-        #print(name_list)
+        name_list=self.d.get_cards_names(player_list)
         for card in name_list:
             card_list.append(card)
         ret_cards=self.d.card_list_sort(card_list)
@@ -63,13 +59,14 @@ class Game:
                     msg+=(round_num*' ')+ str(winners[p]) + " with a " + str(highest[p])
             msg+=(round_num*' ')+'\n -Tie Breaker-\n'
             round_num+=1
-            msg+=self.play(winners,False,round_num)
+            msg+=self.play(winners,round_num)
 
         return msg
+    #if run as main, plays test game with 4 players
 if __name__ == '__main__':
     g = Game()
     players=['bill','bob','billy','larry']
-    print(g.play(players,False,1))
+    print(g.play(players,1))
 
 
 

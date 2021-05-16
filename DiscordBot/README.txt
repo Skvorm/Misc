@@ -13,7 +13,8 @@ Commands
 
 
 -Requires
-	-Discord.py (https://discordpy.readthedocs.io/en/latest)
+	-Discord.py[voice] (https://discordpy.readthedocs.io/en/latest)
 	(base discord api libraries for python)
 	-Dot-env (https://pypi.org/project/python-dotenv)
 	(.env file used to store Discord Api Key)
+	
